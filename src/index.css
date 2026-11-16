@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Markdown 预览区排版样式（GitHub 风格） */
+.markdown-body {
+  @apply text-[15px] leading-7 text-gray-800 break-words;
+}
+
+.markdown-body h1 {
+  @apply text-2xl font-bold mt-8 mb-4 pb-2 border-b border-gray-200;
+}
+
+.markdown-body h2 {
+  @apply text-xl font-bold mt-6 mb-3 pb-1 border-b border-gray-100;
+}
+
+.markdown-body h3 {
+  @apply text-lg font-semibold mt-5 mb-2;
+}
+
+.markdown-body h4 {
+  @apply text-base font-semibold mt-4 mb-2;
+}
+
+.markdown-body p {
+  @apply my-3;
+}
+
+.markdown-body a {
+  @apply text-blue-600 underline hover:text-blue-800;
+}
+
+.markdown-body strong {
+  @apply font-semibold;
+}
+
+.markdown-body del {
+  @apply text-gray-400;
+}
+
+.markdown-body ul {
+  @apply list-disc pl-6 my-3 space-y-1;
+}
+
+.markdown-body ol {
+  @apply list-decimal pl-6 my-3 space-y-1;
+}
+
+.markdown-body li > ul,
+.markdown-body li > ol {
+  @apply my-1;
+}
+
+/* 任务列表项：去掉圆点 */
+.markdown-body li:has(> input[type='checkbox']) {
+  list-style: none;
+  margin-left: -1.25rem;
+}
+
+.markdown-body input[type='checkbox'] {
+  @apply mr-1.5 accent-blue-600;
+}
+
+.markdown-body blockquote {
+  @apply border-l-4 border-gray-300 bg-gray-50 rounded-r px-4 py-1 my-4 text-gray-600;
+}
+
+.markdown-body hr {
+  @apply my-6 border-gray-200;
+}
+
+.markdown-body table {
+  @apply my-4 w-full border-collapse text-sm;
+}
+
+.markdown-body th {
+  @apply border border-gray-300 bg-gray-100 px-3 py-1.5 text-left font-semibold;
+}
+
+.markdown-body td {
+  @apply border border-gray-300 px-3 py-1.5;
+}
+
+/* 行内代码（高亮代码块的 code 带有 language-xxx 类名，已被排除） */
+.markdown-body code:not([class*='language-']) {
+  @apply bg-gray-100 text-rose-600 rounded px-1.5 py-0.5 text-[13px] font-mono;
+}
+
+.markdown-body pre {
+  @apply my-3 overflow-x-auto rounded-lg;
+}
+
+.markdown-body img {
+  @apply max-w-full rounded-lg my-4;
+}
